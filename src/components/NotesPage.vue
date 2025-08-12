@@ -112,7 +112,7 @@
                 </button>
               </div>
               <p class="mt-2 text-sm text-gray-600">
-                {{ note.createdAt ? formatDate(note.createdAt.toDate()) : 'No date' }}
+                {{ note.createdAt ? formatDate(new Date(note.createdAt)) : 'No date' }}
               </p>
               <p class="mt-2 text-sm text-gray-500">
                 {{ note.rows.length || 0 }} {{ note.rows.length === 1 ? 'row' : 'rows' }}

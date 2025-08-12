@@ -9,7 +9,8 @@ import {
   equalTo,
   serverTimestamp,
   onValue,
-  off
+  off,
+  type DataSnapshot
 } from 'firebase/database'
 import { database } from './config'
 

@@ -18,7 +18,7 @@ export const useNotes = (userId: string) => {
   const sortedNotes = computed(() => {
     return [...notes.value].sort((a, b) => {
       if (!a.updatedAt || !b.updatedAt) return 0
-      return b.updatedAt.seconds - a.updatedAt.seconds
+      return b.updatedAt - a.updatedAt
     })
   })
 

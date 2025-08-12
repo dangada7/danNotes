@@ -62,10 +62,10 @@ A simple web application that allows users to create, view, edit, and delete per
 - [x] Handle authentication errors and loading states
 
 ### 4.3. Database Structure
-- [ ] Design Firestore collection structure for notes
-- [ ] Create data models for notes (key-value pairs)
-- [ ] Set up Firestore security rules
-- [ ] Implement CRUD operations for notes
+- [x] Design Firebase Realtime Database structure for notes
+- [x] Create data models for notes (key-value pairs)
+- [x] Set up Firebase Realtime Database security rules
+- [x] Implement CRUD operations for notes
 
 ### 4.4. Notes List Page
 - [ ] Create notes list component
