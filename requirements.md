@@ -54,12 +54,12 @@ A simple web application that allows users to create, view, edit, and delete per
 - [x] Install necessary dependencies (Vue Router, Firebase SDK)
 
 ### 4.2. Authentication Implementation
-- [ ] Create login page component
-- [ ] Implement Google sign-in functionality
-- [ ] Set up authentication state management
-- [ ] Create route guards for protected pages
-- [ ] Implement logout functionality
-- [ ] Handle authentication errors and loading states
+- [x] Create login page component
+- [x] Implement Google sign-in functionality
+- [x] Set up authentication state management
+- [x] Create route guards for protected pages
+- [x] Implement logout functionality
+- [x] Handle authentication errors and loading states
 
 ### 4.3. Database Structure
 - [ ] Design Firestore collection structure for notes
