@@ -48,10 +48,10 @@ A simple web application that allows users to create, view, edit, and delete per
 ### 4.1. Project Setup
 - [x] Initialize Vue.js project with Vite or Vue CLI
 - [x] Install and configure Tailwind CSS
-- [ ] Set up Firebase project and configuration
-- [ ] Configure Firebase Authentication with Google provider
-- [ ] Set up Firebase Firestore database
-- [ ] Install necessary dependencies (Vue Router, Firebase SDK)
+- [x] Set up Firebase project and configuration
+- [x] Configure Firebase Authentication with Google provider
+- [x] Set up Firebase Firestore database
+- [x] Install necessary dependencies (Vue Router, Firebase SDK)
 
 ### 4.2. Authentication Implementation
 - [ ] Create login page component
