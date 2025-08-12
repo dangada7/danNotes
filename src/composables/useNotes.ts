@@ -39,7 +39,7 @@ export const useNotes = (userId: string) => {
     try {
       isLoading.value = true
       error.value = null
-      currentNote.value = await getNote(noteId)
+      currentNote.value = await getNote(noteId, userId)
     } catch (err) {
       error.value = err instanceof Error ? err.message : 'Failed to load note'
       console.error('Load note error:', err)
@@ -83,7 +83,7 @@ export const useNotes = (userId: string) => {
     
     try {
       error.value = null
-      await updateNote(currentNote.value.id, updates)
+      await updateNote(currentNote.value.id, { ...updates, userId })
       
       // Update local state
       if (currentNote.value) {
@@ -100,7 +100,7 @@ export const useNotes = (userId: string) => {
     try {
       isLoading.value = true
       error.value = null
-      await deleteNote(noteId)
+      await deleteNote(noteId, userId)
       notes.value = notes.value.filter(note => note.id !== noteId)
     } catch (err) {
       error.value = err instanceof Error ? err.message : 'Failed to delete note'

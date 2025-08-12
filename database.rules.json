@@ -1,21 +1,37 @@
 {
   "rules": {
+    "notebooks": {
+      "$userId": {
+        ".read": "auth != null && auth.uid == $userId",
+        ".write": "auth != null && auth.uid == $userId",
+        "$notebookId": {
+          ".read": "auth != null && auth.uid == $userId",
+          ".write": "auth != null && auth.uid == $userId",
+          "userId": {
+            ".validate": "newData.val() == auth.uid"
+          },
+          "title": {
+            ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 100"
+          },
+          "createdAt": {
+            ".validate": "newData.isNumber() || newData.val() == now"
+          },
+          "updatedAt": {
+            ".validate": "newData.isNumber() || newData.val() == now"
+          }
+        }
+      }
+    },
     "notes": {
-      "$noteId": {
-        ".read": "auth != null && data.child('userId').val() == auth.uid",
-        ".write": "auth != null && (data.child('userId').val() == auth.uid || newData.child('userId').val() == auth.uid)",
-        "userId": {
-          ".validate": "newData.val() == auth.uid"
-        },
-        "title": {
-          ".validate": "newData.isString() && newData.val().length > 0"
-        },
-        "rows": {
-          ".validate": "newData.hasChildren()",
-          "$rowId": {
-            "id": {
-              ".validate": "newData.isString()"
-            },
+      "$userId": {
+        ".read": "auth != null && auth.uid == $userId",
+        ".write": "auth != null && auth.uid == $userId",
+        "$notebookId": {
+          ".read": "auth != null && auth.uid == $userId",
+          ".write": "auth != null && auth.uid == $userId",
+          "$noteId": {
+            ".read": "auth != null && auth.uid == $userId",
+            ".write": "auth != null && auth.uid == $userId",
             "key": {
               ".validate": "newData.isString()"
             },
@@ -23,15 +39,15 @@
               ".validate": "newData.isString()"
             },
             "order": {
-              ".validate": "newData.isNumber()"
+              ".validate": "newData.isNumber() && newData.val() >= 0"
+            },
+            "createdAt": {
+              ".validate": "newData.isNumber() || newData.val() == now"
+            },
+            "updatedAt": {
+              ".validate": "newData.isNumber() || newData.val() == now"
             }
           }
-        },
-        "createdAt": {
-          ".validate": "newData.isNumber() || newData.val() == now"
-        },
-        "updatedAt": {
-          ".validate": "newData.isNumber() || newData.val() == now"
         }
       }
     }

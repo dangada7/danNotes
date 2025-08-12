@@ -20,6 +20,16 @@ const router = createRouter({
       name: 'Notes',
       component: NotesPage,
       meta: { requiresAuth: true }
+    },
+    {
+      path: '/note/:id',
+      name: 'NoteEdit',
+      component: NotesPage, // For now, redirect back to notes page
+      meta: { requiresAuth: true },
+      beforeEnter: (to) => {
+        // For now, redirect to notes page since we don't have an edit component yet
+        return { path: '/notes' }
+      }
     }
   ],
 })
